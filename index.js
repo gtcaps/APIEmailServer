@@ -39,7 +39,10 @@ app.post('/send-email', (req, res) => {
             return console.log(error);
         }
         console.log('Message sent: %s', info.messageId);
-        res.status(200).send('Email sent');
+        res.status(200).json({
+            message: 'Email sent successfully',
+            type: 'success'
+        });
     });
 });
 
